@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- JavaScript Bundle with Popper -->
+  <link rel="stylesheet" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
+  <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="form.js"></script>
+
+</head>
+<body>
+  <div id="container">
+    <form class="form-modal">
+      <div class="form-title">
+        <h2> Meu Formulário </h2>
+        <!-- <span> Fechar(X) </span> -->
+      </div>
+      
+      <!-- Nome -->
+      <div class="form-body">
+        <div class="form-field" id="form">
+          <label for="form_username"> Nome Completo: </label>
+          <input type="text" name="form_username" id="form_username" placeholder="Nome"  required></input>
+          <div class="form-field-validator"></div>
+        </div>
+
+        <!-- CPF -->
+        <div class="form-field">
+          <label for="form_cpf"> CPF: </label>
+          <input type="text" name="form_cpf" id="form_cpf" placeholder="XXX.XXX.XXX-XX"  required></input>
+          <div class="form-field-validator"></div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-field">
+          <label for="form_email"> E-mail: </label>
+          <input type="email" name="form_email" id="form_email" placeholder="exemplo@exemplo.com" required></input>
+          <div class="form-field-validator"></div>
+        </div>
+
+        <!-- Telefone -->
+        <div class="form-field">
+          <label for="form_telefone"> Telefone: </label>  
+          <input type="text" name="form_telefone" id="form_phone" placeholder="(77) 77777-7777" required> </input>
+          <div class="form-field-validator"></div>
+        </div>
+
+        <!-- Habilitação -->
+        <div class="form-field">
+          <p> Habilitação: </p>  
+          <div class="form-inline">
+            <div class="form-check">
+              <input type="radio" id="form_license_sim" name="form_license_option" value="sim">
+              <label for="form_license_sim"> Sim </label>  
+            </div>
+            <div class="form-check">
+              <input type="radio" id="form_license_nao" name="form_license_option" value="nao" checked>
+              <label for="form_license_nao"> Não </label>  
+            </div>
+          </div>
+          <div class="form-field-validator"></div>
+        </div>
+
+        <!-- Categorias -->
+        <div class="form-field" style="display: none;">
+          <p> Categoria: </p>
+          <textarea name="form_category" id="form_category" rows="5" placeholder="Descrição..."></textarea>
+          <div class="form-field-validator"></div>
+        </div>
+
+        <!-- Linguas estrangeiras -->
+        <div class="form-field">
+          <p> Linguas Estrangeiras: </p>  
+          
+          <div class="form-check">
+            <input type="checkbox" id="form_language_english" name="form_language" value="English">
+            <label class="" for="form_language_english"> Inglês </label>  
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="form_language_spanish" name="form_language" value="Spanish">
+            <label for="form_language_spanish"> Espanhol </label>  
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="form_language_french" name="form_linguas" value="French">
+            <label for="form_language_french"> Francês </label>  
+          </div>
+          <div class="form-field-validator"></div>
+        </div>
+
+        <!-- Estado -->
+        <div class="form-field">          
+          <label for="form_state"> Estado: </label>
+          <select name="form_state" id="form_state" name="form_state" required>
+            <option value="" selected> :.. Selecione ..: </option>
+          </select>
+          <div class="form-field-validator"></div>
+        </div>
+
+        <!-- Cidade -->
+        <div class="form-field">          
+          <label for="form_city"> Cidade </label>
+          <select name="form_city" id="form_city" required>
+            <option value="" selected> :.. Selecione ..: </option>
+          </select>
+          <div class="form-field-validator"></div>
+        </div>
+
+        <!-- CEP -->
+        <div class="form-field">
+          <label for="form_cep"> CEP: </label>
+          <input type="text" name="form_cep" id="form_cep" placeholder="42222-222"  required></input>
+          <div class="form-field-validator"></div>
+        </div>
+        
+        <!-- Logradouro -->
+        <div class="form-field">
+          <label for="form_street"> Logradouro: </label>
+          <input type="text" name="form_street" id="form_street" placeholder="Rua Barão do Rio Branco"  required></input>
+          <div class="form-field-validator"></div>
+        </div>
+        
+        <div class="form-field form-inline form-inline-2">
+          <!-- Numero -->
+          <div class="form-field">
+            <label for="form_number"> Numero: </label>
+            <input type="text" name="form_number" id="form_number" placeholder="102"  required></input>
+            <div class="form-field-validator"></div>
+          </div>
+
+          <!-- Complemento -->
+          <div class="form-field">
+            <label for="form_complement"> Complemento: </label>
+            <input type="text" name="form_complement" id="form_complement" placeholder="Bloco 502"></input>
+            <div class="form-field-validator"></div>
+          </div>
+        </div>
+        <!-- Cargo -->
+        <div class="form-field">
+          <label for="form_role"> Cargo: </label>
+          <select name="form_role" id="form_role" size="6" required>
+            <option value="" selected> :.. Selecione ..: </option>
+            <option value="cargo1"> Cargo 1 </option>
+            <option value="cargo2"> Cargo 2 </option>
+            <option value="cargo3"> Cargo 3 </option>
+            <option value="cargo4"> Cargo 4 </option>
+            <option value="cargo5"> Cargo 5 </option>
+          </select>
+          <div class="form-field-validator"></div>
+        </div>
+
+         <!-- Salario -->
+        <div class="form-field">
+          <label for="form_salary"> Salario Proposto: </label>
+          <input type="text" name="form_salary" id="form_salary" placeholder="10.000,00" required></input>
+          <div class="form-field-validator"></div>
+        </div>
+
+        <div class="form-table">
+          <table>
+            <tr>
+              <th><p> Dia da Semana </p></th>
+              <th><p> Hora Início </p></th>
+              <th><p> Hora Fim </p></th>
+              <th><p> Tempo de Descanso (h) </p></th>
+              <th><p> Carga Horaria (h) </p></th>
+            </tr>
+            <tr class="form_table_row">
+              <th> <p>Segunda</p> </th>
+              <td><input class="form-field-time" type="text" name="form_table_start_1" id="form_table_start_1" placeholder="00:00" required></input></td>
+              <td><input class="form-field-time" type="text" name="form_table_finish_1" id="form_table_finish_1" placeholder="00:00" required></input></td>
+              <td><input class="form-field-hour" type="number" name="form_table_rest_1" id="form_table_rest_1" placeholder="0" required></input></td>
+              <td><input type="text" name="form_table_workload_1" id="form_table_workload_1" placeholder="-" disabled></input></td>
+            </tr>
+            <tr class="form_table_row">
+              <th> <p>Terça</p> </th>
+              <td><input class="form-field-time" type="text" name="form_table_start_2" id="form_table_start_2" placeholder="00:00" required></input></td>
+              <td><input class="form-field-time" type="text" name="form_table_finish_2" id="form_table_finish_2" placeholder="00:00" required></input></td>
+              <td><input class="form-field-hour" type="number" name="form_table_rest_2" id="form_table_rest_2" placeholder="0" required></input></td>
+              <td><input type="text" name="form_table_workload_2" id="form_table_workload_2" placeholder="-" disabled></input></td>
+            </tr>
+            <tr class="form_table_row">
+              <th> <p>Quarta</p> </th>
+              <td><input class="form-field-time" type="text" name="form_table_start_3" id="form_table_start_3" placeholder="00:00" required></input></td>
+              <td><input class="form-field-time" type="text" name="form_table_finish_3" id="form_table_finish_3" placeholder="00:00" required></input></td>
+              <td><input class="form-field-hour"type="number" name="form_table_rest_3" id="form_table_rest_3" placeholder="0" required></input></td>
+              <td><input type="text" name="form_table_workload_3" id="form_table_workload_3" placeholder="-" disabled></input></td>
+            </tr>
+            <tr class="form_table_row">
+              <th> <p>Quinta</p> </th>
+              <td><input class="form-field-time" type="text" name="form_table_start_4" id="form_table_start_4" placeholder="00:00" required></input></td>
+              <td><input class="form-field-time" type="text" name="form_table_finish_4" id="form_table_finish_4" placeholder="00:00" required></input></td>
+              <td><input class="form-field-hour" type="number" name="form_table_rest_4" id="form_table_rest_4" placeholder="0" required></input></td>
+              <td><input type="text" name="form_table_workload_4" id="form_table_workload_4" placeholder="-" disabled></input></td>
+            </tr>
+            <tr class="form_table_row">
+              <th> <p>Sexta</p> </th>
+              <td><input class="form-field-time" type="text" name="form_table_start_5" id="form_table_start_5" placeholder="00:00" required></input></td>
+              <td><input class="form-field-time" type="text" name="form_table_finish_5" id="form_table_finish_5" placeholder="00:00" required></input></td>
+              <td><input class="form-field-hour" type="number" name="form_table_rest_5" id="form_table_rest_5" placeholder="0" required></input></td>
+              <td><input type="text" name="form_table_workload_5" id="form_table_workload_5" placeholder="-" disabled></input></td>
+            </tr>
+            <tr >
+              <th colspan="4"> <p>Carga Horária Semanal</p> </th>
+              <td><input type="text" name="form_table_workload_total" id="form_table_workload_total" placeholder="0" disabled></input></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Enviar -->
+        <div class="form-field">
+          <input type="submit" id="form_send"name="form_send" value="Enviar"> 
+        </div>
+      </div>   
+    </form>
+  </div>
+</body>
+
+</html>
